@@ -23,11 +23,11 @@ export class AppComponent {
 
   submit() {
     let resultData = []; // final array for API
-    this.submitData = [...this.Data];
+    this.submitData = this.Data.map(x => Object.assign({}, x));
     for (let i = 0; i < this.submitData.length; i++) {
       delete this.submitData[i].Company;
     }
-    console.log(this.Data, 'removed array');
+    console.log(this.submitData, 'removed array');
     this.submitData.map((row, index) => {
       console.log(this.status[index]);
       const obj = {
