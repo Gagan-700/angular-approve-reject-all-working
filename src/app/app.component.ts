@@ -23,7 +23,12 @@ export class AppComponent {
 
   submit() {
     let resultData = []; // final array for API
-    this.Data.map((row, index) => {
+    this.submitData = [...this.Data];
+    for (let i = 0; i < this.submitData.length; i++) {
+      delete this.submitData[i].Company;
+    }
+    console.log(this.Data, 'removed array');
+    this.submitData.map((row, index) => {
       console.log(this.status[index]);
       const obj = {
         ...row,
@@ -45,7 +50,7 @@ export class AppComponent {
     for (var i = 0; i < len; i++) {
       this.rejectFlag[i] = false;
       this.approveFlag[i] = true;
-      this.status[i]='Approve';
+      this.status[i] = 'Approve';
     }
     // this.rejectFlag = false;
     // this.approveFlag = true;
@@ -61,7 +66,7 @@ export class AppComponent {
     for (var i = 0; i < len; i++) {
       this.rejectFlag[i] = true;
       this.approveFlag[i] = false;
-      this.status[i]='Reject';
+      this.status[i] = 'Reject';
     }
     // this.approveFlag = false;
     // this.rejectFlag = true;
@@ -70,6 +75,5 @@ export class AppComponent {
     // } else {
     //   this.rejectFlag = true;
     // }
-    
   }
 }
