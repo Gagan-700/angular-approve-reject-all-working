@@ -23,12 +23,12 @@ export class AppComponent {
 
   submit() {
     let resultData = []; // final array for API
-    this.submitData = this.Data.map(x => Object.assign({}, x));
-    for (let i = 0; i < this.submitData.length; i++) {
-      delete this.submitData[i].Company;
-    }
-    console.log(this.submitData, 'removed array');
-    this.submitData.map((row, index) => {
+    // this.submitData = this.Data.map(x => Object.assign({}, x));
+    // for (let i = 0; i < this.submitData.length; i++) {
+    //   delete this.submitData[i].Company;
+    // }
+    // console.log(this.submitData, 'removed array');
+    this.Data.map((row, index) => {
       console.log(this.status[index]);
       const obj = {
         ...row,
@@ -38,7 +38,13 @@ export class AppComponent {
 
       resultData.push(obj);
     });
-    console.log(resultData);
+    // for(let i = 0; i<resultData.length; i++){
+    //   if(resultData[i].status == null ){
+    //     resultData.splice(i,1)
+    //     break;
+    //   }
+    // }
+    console.log(resultData, 'resultData');
   }
   // change(){
 
