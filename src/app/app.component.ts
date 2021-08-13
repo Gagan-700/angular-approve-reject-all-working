@@ -22,7 +22,8 @@ export class AppComponent {
   }
 
   submit() {
-    let resultData = []; // final array for API
+    let resultData = [];
+    let reqObj = []; // final array for API
     // this.submitData = this.Data.map(x => Object.assign({}, x));
     // for (let i = 0; i < this.submitData.length; i++) {
     //   delete this.submitData[i].Company;
@@ -38,14 +39,13 @@ export class AppComponent {
 
       resultData.push(obj);
     });
-    // for(let i = 0; i<resultData.length; i++){
-    //   if(resultData[i].status == null ){
-    //     resultData.splice(i,1)
-    //     break;
-    //   }
-    // }
-    console.log(resultData, 'resultData');
+    const statusToRemove = null;
+
+const filteredPeople = resultData.filter((item) => item.status !== statusToRemove);
+
+    console.log(filteredPeople, 'reqObject');
   }
+
   // change(){
 
   //   console.log('jhcbjdcbh')
