@@ -48,10 +48,7 @@ const filteredPeople = resultData.filter((item) => item.status !== statusToRemov
     console.log(filteredPeople, 'reqObject');
   }
 
-  // change(){
-
-  //   console.log('jhcbjdcbh')
-  // }
+  
 
   submitDisabled(){
     this.disabledFlag = false;
@@ -69,14 +66,7 @@ const filteredPeople = resultData.filter((item) => item.status !== statusToRemov
       this.approveFlag[i] = true;
       this.status[i] = 'Approve';
     }
-    // this.rejectFlag = false;
-    // this.approveFlag = true;
-
-    // if (this.approveFlag === true) {
-    //   this.approveFlag = false;
-    // } else {
-    //   this.approveFlag = true;
-    // }
+    
   }
 
   reject(len) {
@@ -85,12 +75,6 @@ const filteredPeople = resultData.filter((item) => item.status !== statusToRemov
       this.approveFlag[i] = false;
       this.status[i] = 'Reject';
     }
-    // this.approveFlag = false;
-    // this.rejectFlag = true;
-    // if (this.rejectFlag === true) {
-    //   this.rejectFlag = false;
-    // } else {
-    //   this.rejectFlag = true;
-    // }
+   
   }
 }
