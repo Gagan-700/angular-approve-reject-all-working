@@ -12,6 +12,8 @@ export class AppComponent {
   rejectFlag = [];
   status = [];
   textarea = [];
+  disabledFlag = true;
+  textareaFlag = false;
 
   constructor() {
     this.Data = [
@@ -50,6 +52,15 @@ const filteredPeople = resultData.filter((item) => item.status !== statusToRemov
 
   //   console.log('jhcbjdcbh')
   // }
+
+  submitDisabled(){
+    this.disabledFlag = false;
+    
+  }
+  callAll(){
+    this.submitDisabled();
+    this.textareaFlag = true;
+  }
 
   approve(len) {
     console.log('in approval all', len);

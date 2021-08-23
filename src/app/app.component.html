@@ -12,15 +12,17 @@
       <td>{{x.Company}}{{i}}</td>
       <td>{{x.Contact}}</td>
       <td>{{x.Country}}</td>
-      <td><input type="radio"  value="Approve" [checked] = 'approveFlag[i]'  name="option-{{i}}" [(ngModel)]="status[i]"/>
+      <td><input type="radio"  value="Approve" [checked] = 'approveFlag[i]'  name="option-{{i}}"  (change)="submitDisabled()" [(ngModel)]="status[i]"/>
       </td>
-      <td><input type="radio"  value="Reject" [checked] = 'rejectFlag[i]' name="option-{{i}}" [(ngModel)]="status[i]"/>
+      <td><input type="radio"  value="Reject" [checked] = 'rejectFlag[i]' name="option-{{i}}" (change)="callAll()" [(ngModel)]="status[i]"/>
       </td>
-      <td><textarea [(ngModel)] = "textarea[i]"></textarea></td>
+      <td><textarea  [(ngModel)] = "textarea[i]"></textarea>
+      <span *ngIf = "textareaFlag">Enter comments</span>
+      </td>
     </tr>
   </table>
 
   <button (click)="approve(Data.length)">Approve all</button>
   <button (click)='reject(Data.length)'>Reject All</button>
-  <button (click)='submit()'>submit</button>
+  <button (click)='submit()' [disabled] = "disabledFlag">submit</button>
 </div>
