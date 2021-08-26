@@ -4,6 +4,7 @@
       <th>Company</th>
       <th>Contact</th>
       <th>Country</th>
+      <th>Justification</th>
       <th>Approve</th>
       <th>Reject</th>
       <th>Comments</th>
@@ -12,6 +13,9 @@
       <td>{{x.Company}}{{i}}</td>
       <td>{{x.Contact}}</td>
       <td>{{x.Country}}</td>
+      <td><a (click) = "justToggle()" href="javascript:void(0);">{{xyz}}<span>...</span> </a>
+        <a *ngIf ="justi" href="javascript:void(0);">{{sample}} </a>
+      </td>
       <td><input type="radio"  value="Approve" [checked] = 'approveFlag[i]'  name="option-{{i}}"  (change)="submitDisabled()" [(ngModel)]="status[i]"/>
       </td>
       <td><input type="radio"  value="Reject" [checked] = 'rejectFlag[i]' name="option-{{i}}" (change)="callAll()" [(ngModel)]="status[i]"/>

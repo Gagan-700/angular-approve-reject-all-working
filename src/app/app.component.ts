@@ -14,13 +14,29 @@ export class AppComponent {
   textarea = [];
   disabledFlag = true;
   textareaFlag = false;
+  sample;
+  xyz
+  abc
+  justi = false;
 
   constructor() {
     this.Data = [
-      { Company: 'Google', Contact: 'Raju', Country: 'US' },
+      { Company: 'Google', Contact: 'Raju', Country: 'US',Justification:'hi there this is a test env and we whant your' },
       { Company: 'Apple', Contact: 'Babu bhaiya', Country: 'UK' },
       { Company: 'Amazon', Contact: 'Shyam', Country: 'IN' }
     ];
+    this.sample = this.Data[0].Justification
+     this.xyz = this.sample.slice(0,20)
+     
+    console.log(this.abc,"%%%")
+  }
+  justToggle(){
+    if(this.justi){
+      this.justi = false;
+    }
+    else{
+      this.justi = true;
+    }
   }
 
   submit() {
