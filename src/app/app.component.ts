@@ -17,7 +17,7 @@ export class AppComponent {
   sample;
   xyz
   abc
-  justi = false;
+  justi = true;
 
   constructor() {
     this.Data = [
@@ -33,9 +33,11 @@ export class AppComponent {
   justToggle(){
     if(this.justi){
       this.justi = false;
+      this.xyz = this.sample
     }
     else{
       this.justi = true;
+      this.xyz = this.sample.slice(0,20)
     }
   }
 
