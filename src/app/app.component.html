@@ -21,7 +21,7 @@
       <td><input type="radio"  value="Reject" [checked] = 'rejectFlag[i]' name="option-{{i}}" (change)="callAll()" [(ngModel)]="status[i]"/>
       </td>
       <td><textarea  [(ngModel)] = "textarea[i]"></textarea>
-      <span *ngIf = "textareaFlag">Enter comments</span>
+      
       </td>
     </tr>
   </table>
