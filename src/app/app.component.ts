@@ -40,6 +40,7 @@ export class AppComponent {
       this.xyz = this.sample.slice(0,20)
     }
   }
+  
 
   submit() {
     let resultData = [];
@@ -66,6 +67,14 @@ const filteredPeople = resultData.filter((item) => item.status !== statusToRemov
     console.log(filteredPeople, 'reqObject');
   }
 
+  refresh(len){
+    for(let i = 0; i<=this.Data.length;i++){
+      this.approveFlag[i] = false;
+      this.rejectFlag[i] = false;
+    }
+    console.log("refresh works")
+  }
+
   
 
   submitDisabled(){
@@ -85,6 +94,15 @@ const filteredPeople = resultData.filter((item) => item.status !== statusToRemov
       this.status[i] = 'Approve';
     }
     
+  }
+  Regenerate(i){
+    const obj = {
+      Company:this.Data[i].Company,
+      Contact:this.Data[i].Contact,
+      status:this.status[i],
+      comments:this.textarea[i]
+    }
+    console.log(obj,"regenrate %%%")
   }
 
   reject(len) {

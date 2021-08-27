@@ -8,6 +8,7 @@
       <th>Approve</th>
       <th>Reject</th>
       <th>Comments</th>
+      <th>button</th>
     </tr>
     <tr *ngFor="let x of Data;let i = index">
       <td>{{x.Company}}{{i}}</td>
@@ -23,10 +24,12 @@
       <td><textarea  [(ngModel)] = "textarea[i]"></textarea>
       
       </td>
+      <td><button (click)="Regenerate(i)">Regenerate</button></td>
     </tr>
   </table>
 
   <button (click)="approve(Data.length)">Approve all</button>
+  <button (click)="refresh(Data.length)">Refresh</button>
   <button (click)='reject(Data.length)'>Reject All</button>
   <button (click)='submit()' [disabled] = "disabledFlag">submit</button>
 </div>
