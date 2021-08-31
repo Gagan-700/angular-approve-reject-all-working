@@ -17,7 +17,7 @@ export class AppComponent {
   sample;
   xyz
   abc
-  justi = true;
+  justi = [];
 
   constructor() {
     this.Data = [
@@ -27,16 +27,16 @@ export class AppComponent {
     ];
     this.sample = this.Data[0].Justification
      this.xyz = this.sample.slice(0,20)
-     
+    this.justi = Array(this.Data.length).fill(false);
     console.log(this.abc,"%%%")
   }
-  justToggle(){
-    if(this.justi){
-      this.justi = false;
+  justToggle(i){
+    if(this.justi[i]){
+      this.justi[i] = false;
       this.xyz = this.sample
     }
     else{
-      this.justi = true;
+      this.justi[i] = true;
       this.xyz = this.sample.slice(0,20)
     }
   }
